@@ -1,0 +1,31 @@
+<div class="event-form">
+  <form (submit)="handleSubmit()" [formGroup]="eventForm">
+    <div class="input-holder">
+      <input type="text" placeholder="Event title" formControlName="title" />
+    </div>
+    <div class="input-holder">
+      <kendo-datetimepicker
+        formControlName="start"
+        placeholder="Start date"
+      ></kendo-datetimepicker>
+    </div>
+    <div class="input-holder">
+      <kendo-datetimepicker
+        formControlName="end"
+        placeholder="End date"
+      ></kendo-datetimepicker>
+    </div>
+    
+    
+    <div class="input-holder">
+      <textarea
+        placeholder="Event description"
+        rows="4"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="input-holder">
+      <button type="submit">Schedule</button>
+    </div>
+  </form>
+</div>

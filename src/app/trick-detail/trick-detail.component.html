@@ -1,0 +1,11 @@
+<div *ngIf="trick">
+  <div>
+    <h2>{{trick.name}}</h2>
+    <p>{{trick.description}}</p>
+    <p>Difficulty:   <ngb-rating [max]="5" [(rate)]="trick.difficulty" [readonly]="true"></ngb-rating></p>
+  </div>
+  
+  <div class="col-xs-1" align="center">
+    <video height="300" width="400" controls [src] = "trick.url" ></video>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <h2>Techniques and Tricks</h2>
+    <ul class="list-group">
+      <li *ngFor="let trick of tricks" class="list-group-item"
+          [class.selected] = "trick === selectedTrick"
+          (click)="onSelect(trick)">
+          {{trick.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <!--<h3 *ngIf = "!isShow">Preview Here</h3>-->
+    <app-trick-detail [trick]="selectedTrick"></app-trick-detail>   
+  </div>
+</div>
