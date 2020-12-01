@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GridModule } from '@progress/kendo-angular-grid';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
-
+import { PopupModule } from '@progress/kendo-angular-popup';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
@@ -20,19 +21,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    SchedulerComponent,
-    HeaderComponent,
     EventFormComponent,
+    HeaderComponent,
+    SchedulerComponent,
     TricksComponent,
     TrickDetailComponent
   ],
   imports: [
-    BrowserModule,
-    SchedulerModule,
-    NgbModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    GridModule,
     DateInputsModule,
-    ReactiveFormsModule
+    NgbModule,
+    ReactiveFormsModule,
+    PopupModule,
+    SchedulerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

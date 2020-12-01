@@ -2,6 +2,7 @@
 
 <header>
   <app-header></app-header>
+  <app-event-form (newEvent)="onNewEvent($event)"></app-event-form>
 </header>
 <main>
   <div class="container">
@@ -9,7 +10,6 @@
     <div class="row">
       <div class="col">
         <app-scheduler [events]="events"></app-scheduler>
-        <app-event-form (newEvent)="onNewEvent($event)"></app-event-form>
       </div>
     </div>
   </div>

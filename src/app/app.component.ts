@@ -18,4 +18,6 @@ export class AppComponent {
   onNewEvent(event: Event) {
     this.events = this.events.concat(event);
   }
+  
+
 }

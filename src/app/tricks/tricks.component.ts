@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Trick } from '../trick';
 import { TRICKS } from '../trick-list';
+import { products } from '../products';
 
 @Component({
   selector: 'app-tricks',
@@ -18,6 +19,8 @@ export class TricksComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  public gridData: any[] = products;
   
   onSelect(trick: Trick): void {
     this.selectedTrick = trick; //select trick

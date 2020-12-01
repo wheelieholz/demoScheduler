@@ -14,3 +14,60 @@
     <app-trick-detail [trick]="selectedTrick"></app-trick-detail>   
   </div>
 </div>
+
+<h4>Resize the output frame to see responsive behavior</h4>
+<kendo-grid [data]="gridData" [height]="400">
+    <kendo-grid-column media="(max-width: 450px)" title="Items">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <!-- template for mobile -->
+            <!--
+            <h4 [class.discontinued]="dataItem.Discontinued">
+                {{ dataItem.name }}
+            </h4>
+            -->
+            <dl>
+                <dt (click)="onSelect(trick)">Description</dt>
+                <dd>{{ dataItem.description }}</dd>
+
+                <dt>Difficulty</dt>
+                <dd>{{ dataItem.difficulty }}</dd>
+
+                <dt>Video URL</dt>
+                <dd>{{ dataItem.url }}</dd>
+            </dl>
+        </ng-template>
+    </kendo-grid-column>
+
+    <!-- columns for mid-size devices -->
+    <kendo-grid-column
+        media="(min-width: 250px)"
+        field="id" title="ID" width="40">
+    </kendo-grid-column>
+    <kendo-grid-column
+        media="(min-width: 350px)"
+        field="name" title="Name">
+    </kendo-grid-column>
+    <kendo-grid-column
+        media="(min-width: 350px)"
+        field="description" title="Description">
+    </kendo-grid-column>
+
+    <!-- additional columns on large devices -->
+    <kendo-grid-column
+        media="(min-width: 380px)"
+        field="difficulty" title="Difficulty" width="80">
+    </kendo-grid-column>
+    <kendo-grid-column
+        media="(min-width: 380px)"
+        field="url" title="Video URL" width="80">
+    </kendo-grid-column>
+    <!--
+    <kendo-grid-column
+        media="(min-width: 680px)"
+        title="Discontinued" width="120">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <input type="checkbox" [checked]="dataItem.id" disabled />
+        </ng-template>
+    </kendo-grid-column>
+    -->
+</kendo-grid>
