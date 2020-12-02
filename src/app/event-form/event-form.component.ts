@@ -39,15 +39,7 @@ export class EventFormComponent implements OnInit {
         this.show = !this.show;
         this.toggleText = this.show ? 'Hide' : 'Show';
     }
-
-
-
-
-
-
-
-
-  
+ 
   eventForm: FormGroup = new FormGroup({
     title: new FormControl(''),
     description: new FormControl(''),

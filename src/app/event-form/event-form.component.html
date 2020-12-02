@@ -1,4 +1,10 @@
-<button #anchor (click)="onToggle()" class="k-button">Schedule Now!</button>
+<div class="container">
+  <div class="row">
+    <div class="">
+      <button #anchor (click)="onToggle()" class="k-button">Schedule Now!</button>
+    </div>
+  </div>
+</div>
 <kendo-popup [animate]="animate" [anchor]="anchor" [popupClass]="'content popup'" *ngIf="show">
   <div class="event-form">
     <form (submit)="handleSubmit()" [formGroup]="eventForm">
